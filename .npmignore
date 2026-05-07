@@ -1,0 +1,10 @@
+src/
+node_modules/
+*.log
+*.map
+tsconfig.json
+rollup.config.js
+postcss.config.js
+tailwind.config.js
+src/styles/
+!.dist/styles.css
