@@ -16,6 +16,10 @@
     "dist"
   ],
   "author": "Pouria <PouriyaxAmini@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pourianof/rhf-devtools"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "vite test/ui-form --port 3001",
