@@ -1,6 +1,6 @@
 # RHF DevTools
 
-Developer tool for debugging and inspecting React Hook Form instances in Next.js applications.
+Developer tool for debugging and inspecting React Hook Form instances in React applications.
 
 ## Installation
 
