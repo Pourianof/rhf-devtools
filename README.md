@@ -225,6 +225,10 @@ export default function RootLayout({ children }) {
 
 The tool only runs in development mode (`NODE_ENV === "development"`). Forms register themselves on mount and unregister on unmount. Samples are persisted to localStorage under the key `form_samples`, with each form's data stored under its unique `formName` identifier.
 
+## Hints
+
+Be cautious when manually managing input values. Without controlled approaches (like react-hook-form's `<Controller />` or `register()`), inconsistencies may arise between form state and inputs. For instance, if you manage an input with `useState` and update the form state via `formContext.setValue`, changes made from outside the component (e.g., via DevTools) won't reflect in your input unless you use `useWatch` or `formContext.watch` to subscribe to changes.
+
 ## Contribution
 
 As I coded this package in one week and with help of AI(deepseek), so I'm aware of
