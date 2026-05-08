@@ -5,7 +5,7 @@ Developer tool for debugging and inspecting React Hook Form instances in Next.js
 ## Installation
 
 ```bash
-npm install react-hook-form
+npm i rhf-devtools
 ```
 
 ## Quick Start
