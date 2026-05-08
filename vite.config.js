@@ -42,7 +42,6 @@ export default defineConfig({
         "react-dom",
         "react-hook-form",
         "react/jsx-runtime",
-        "react-hook-form",
         "react-icons/md",
         "react-icons/fa",
         "react-icons/fi",
