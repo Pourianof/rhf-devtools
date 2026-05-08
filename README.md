@@ -4,8 +4,44 @@ Developer tool for debugging and inspecting React Hook Form instances in React a
 
 ## Installation
 
+### 1) Install package
+
 ```bash
 npm i rhf-devtools
+```
+
+### 2) Enable Tailwind source scanning (required)
+
+#### Tailwind v4 requirement: use @source
+
+In your Tailwind CSS entry file (commonly src/index.css, src/app.css, or whatever your project imports):
+
+```css
+@import "tailwindcss";
+@source "../node_modules/rhf-devtools/dist";
+```
+
+If your package exports utilities from a different folder, update the @source path to match your package layout.
+
+#### Tailwind v3
+
+Add packages source files to your `tailwind.config.js` configs:
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    // your other sources
+    "./node_modules/rhf-devtools/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
+};
 ```
 
 ## Quick Start
@@ -39,6 +75,18 @@ export function MyForm() {
   useRhfDevTool(form, "MyForm");
 
   return <form>{/* your fields */}</form>;
+}
+```
+
+### Next.js Guide
+
+For next.js and server-rendering frameworks, you need a `use-client` component to render `<RhfDevtools>...</RhfDevtools` component.
+
+```ts
+"use client";
+
+export function ClientRhfDevtools({children}:{children:RactNode}){
+  return <RhfDevtools>{children}</RhfDevtools>;
 }
 ```
 

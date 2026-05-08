@@ -1,6 +1,6 @@
 {
   "name": "rhf-devtools",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -9,8 +9,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
-    }
+      "require": "./dist/index.js",
+      "react-server": "./dist/index.react-server.js"
+    },
+    "./styles.css": "./dist/styles.css"
   },
   "files": [
     "dist"
@@ -24,7 +26,7 @@
   "scripts": {
     "dev": "vite test/ui-form --port 3001",
     "test:build": "vite test/build-test --port 3001",
-    "build": "npm run build:js && npm run build:css",
+    "build": "npm run build:js",
     "build:js": "vite build",
     "build:css": "npx @tailwindcss/cli -i ./src/styles/index.css -o ./dist/styles.css --minify",
     "prepublishOnly": "npm run build",
