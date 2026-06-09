@@ -164,7 +164,10 @@ function ObjectHeader({
             {fieldName}:
           </span>
           {!isExpanded && (
-            <span className="text-[11px] text-gray-500 dark:text-gray-400 truncate flex-1">
+            <span
+              title={previewText}
+              className="text-[11px] max-w-[15ch] text-ellipsis overflow-hidden text-gray-500 dark:text-gray-400 truncate flex-1"
+            >
               {previewText}
             </span>
           )}
