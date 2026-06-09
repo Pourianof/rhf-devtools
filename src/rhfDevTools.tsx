@@ -37,12 +37,22 @@ const FormActionsContext = createContext<IFormHelperActions>(
 
 const FormStateContext = createContext<IFormState>({} as unknown as IFormState);
 
-export function useRhfDevTool(form: FormContext, formName?: string) {
+export function useRhfDevTool(
+  form: FormContext,
+  formName?: string,
+  options?: { disable?: boolean },
+) {
   const context = useContext(FormActionsContext);
   const formIdRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // if (!isDevMode) return;
+    if (options?.disable) return;
+    if (!context) {
+      console.warn(
+        "hook used but no RhfDevTools existed and hook not disabled(with set options.disabled to true). It seems you didn't use RhfDevTools component in upper component tree",
+      );
+      return;
+    }
 
     formIdRef.current = context.addForm(form, formName);
 
